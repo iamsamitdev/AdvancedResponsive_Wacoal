@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstap_custom/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ball-pulse-sync.min.css">
+    <title>Bootstrap Custom</title>
+    <style>
+        body{
+            background: url('images/bg/bg.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center bg-primary" style="height:100vh">
+    <div style="color: #fff; text-align: center" class="la-ball-pulse-sync">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p class="text-light mt-4">กำลังโหลดข้อมูลหน้า 1...</p>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function(){
+            // setTimeout(function(){
+            //     window.location = "mycustom_bootstrap2.html";
+            // }, 5000);
+            
+            // ทำงานซ้ำทุก 2 วินาที
+                var body = $('body');
+                var backgrounds = [
+                    'url(images/bg/bg.jpg)', 
+                    'url(images/slides/slide2.jpg)'
+                ];
+                var current = 0;
+                function nextBackground() {
+                    body.css(
+                        'background',
+                        backgrounds[current = ++current % backgrounds.length],
+                        'background-size'
+                    );
+                    setTimeout(nextBackground, 2000);
+                }
+                setTimeout(nextBackground, 2000);
+                body.css('background', backgrounds[0]);
+                body.css('background-size','cover');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+/*** GRID ****/
+.grid-group-custom{
+    width: 30%;
+    float: left;
+    margin: 18px;
+}
+
+.card-img-top{
+    float: none;
+    margin-right: 0px;
+}
+
+
+/*** LIST ***/
+.list-group-custom{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-img-left{
+    width: 400px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:768px){
+
+    .swicth{
+        display: none;
+    }
+
+    /*** GRID ****/
+    .grid-group-custom{
+        width: 100%;
+        margin: 0px;
+        float: none;
+    }
+
+    .card-img-top{
+        float: none;
+        margin-right: 0px;
+    }
+}

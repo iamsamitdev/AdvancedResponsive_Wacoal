@@ -1,0 +1,139 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery UI Demo</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jqueryui/jquery-ui.min.css">
+    <style>
+        #effect h3 { 
+            margin: 0; padding: 0.4em; text-align: center; 
+        }
+        .ui-effects-transfer { 
+            border: 2px dotted gray; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>jQuery UI DatePicker</h1>
+        Choose Date:: <input type="text" id="datepicker">
+    </div>
+
+    <div class="container">
+        <h1>jQuery UI Tabs</h1>
+        <div id="tabs">
+            <ul>
+                <li><a href="#tab-1">Home</a></li>
+                <li><a href="#tab-2">About</a></li>
+                <li><a href="#tab-3">Service</a></li>
+            </ul>
+            <div id="tab-1">
+                <p>This is home tab content</p>
+            </div>
+            <div id="tab-2">
+                <p>This is about tab content</p>
+            </div>
+            <div id="tab-3">
+                <p>This is service tab content</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>jQuery UI Dialog</h1>
+        <a href="#" class="btn btn-primary" id="btnshowdialog">Show Dialog</a>
+        <div id="dialog" title="Warning">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet laboriosam quae corrupti excepturi
+                sequi fugiat distinctio nulla </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>jQuery UI Accordion</h1>
+        <div id="accordion">
+            <h3>Menu 1</h3>
+            <div>
+                <p>This is main menu 1</p>
+            </div>
+            <h3>Menu 2</h3>
+            <div>
+                <p>This is main menu 2</p>
+            </div>
+            <h3>Menu 3</h3>
+            <div>
+                <p>This is main menu 3</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>jQuery UI Effect</h1>
+        <div id="effect" class="ui-widget-content ui-corner-all">
+            <h3 class="ui-widget-header ui-corner-all">Effect</h3>
+            <p>
+                Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing
+                ut, luctus sed, hendrerit vitae, mi.
+            </p>
+        </div>
+
+        <a href="#showEffect" id="showEffect" class="btn btn-success">show effect</a>
+
+    </div>
+
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jqueryui/jquery-ui.min.js"></script>
+
+    <script>
+        // Ready function ไว้ตรวจว่าหน้าเว็บโหลดเสร็จแล้ว
+        $(function () {
+
+            // DatePicker
+            $("#datepicker").datepicker({
+                dateFormat: 'dd/mm/yy',
+                isBuddhist: true
+            });
+
+            // Tabs
+            $("#tabs").tabs({
+                collapsible: true,
+                event: "mouseover"
+            });
+
+            // Dialog
+            $("#dialog").hide();
+            $("#btnshowdialog").click(function () {
+                $("#dialog").dialog();
+            });
+
+            // Accordion
+            var hash = window.location.hash.slice(1);
+            $("#accordion").accordion({
+                active: parseInt(hash)
+            });
+
+            // jQuery UI Effect
+            $("#showEffect").click(function () {
+                
+                var options = {};
+                options = { 
+                    to: "#showEffect", 
+                    className: "ui-effects-transfer" 
+                };
+                $("#effect").effect("transfer",options, 500, function () {
+
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

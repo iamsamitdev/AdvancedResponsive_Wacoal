@@ -1,0 +1,45 @@
+// ประกาศตัวแปรใน scss
+$primary-font:Helvetica;
+$primary-color: #333;
+$secondary-color: fff;
+
+// การเขียน scss แบบ nested
+nav{
+    ul{
+        margin:0;
+        padding: 0;
+        list-style-type: none;
+        li{
+            display: inline;
+            a{
+                display: block;
+                padding: 6px 12px;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// การ  Extend จาก class อื่น
+.message{
+    border:1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.success{
+    @extend .message;
+    border-color:green
+}
+
+.error{
+    @extend .message;
+    border-color:red
+}
+
+body{
+    font-family:$primary-font;
+    color:$primary-color;
+    background-color:$secondary-color;
+}

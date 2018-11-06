@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstap_custom/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ball-pulse-sync.min.css">
+    <title>Bootstrap Custom</title>
+    <style>
+        body{
+            background: url('images/slides/slide1.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center bg-primary" style="height:100vh">
+    <div style="color: #fff; text-align: center" class="la-ball-pulse-sync">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p class="text-light mt-4">กำลังโหลดข้อมูลหน้า 2...</p>
+
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function(){
+            setTimeout(function(){
+                window.location = "mycustom_bootstrap.html";
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
